@@ -1,2 +1,25 @@
-welcome:
-  message: "Bem-vindo ao API Gateway configurado pelo Git!"
+server:
+  port: 9000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/auth/realms/hybrid-service-realm
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: config-server-route
+          uri: lb://config-server
+          predicates:
+            - Path=/config-server/**
+          filters:
+            - StripPrefix=1
