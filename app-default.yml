@@ -18,7 +18,7 @@ spring:
         - id: config-server-route
           uri: lb://config-server
           predicates:
-            - Path=/config-server/**
+            - Path=/config-server/actuator/**
           filters:
             - StripPrefix=1
 eureka:
