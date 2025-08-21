@@ -10,17 +10,19 @@ spring:
           issuer-uri: http://localhost:8181/auth/realms/hybrid-service-realm
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      routes:
-        - id: config-server-route
-          uri: lb://config-server
-          predicates:
-            - Path=/config-server/actuator/**
-          filters:
-            - StripPrefix=1
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: config-server-route
+              uri: lb://config-server
+              predicates:
+                - Path=/config-server/**
+              filters:
+                - StripPrefix=1
 eureka:
   client:
     service-url:
