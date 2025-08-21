@@ -1,10 +1,8 @@
 server:
   port: 9000
-eureka:
-  client:
-    service-url:
-      defaultZone: http://discovery-server:8761/eureka/
 spring:
+  application:
+      name: api-gateway
   security:
     oauth2:
       resourceserver:
@@ -23,3 +21,7 @@ spring:
             - Path=/config-server/**
           filters:
             - StripPrefix=1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
