@@ -23,7 +23,6 @@ spring:
                 - Path=/config-server/**
               filters:
                 - StripPrefix=1
-                - AddRequestHeader=Authorization
 eureka:
   client:
     service-url:
