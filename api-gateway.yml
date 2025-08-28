@@ -23,6 +23,12 @@ spring:
                 - Path=/config-server/**
               filters:
                 - StripPrefix=1
+            - id: user-service-route
+              uri: lb://user-service
+              predicates:
+                - Path=/api/users/**
+              fiters: 
+                - StripPrefix=2
 eureka:
   client:
     service-url:
