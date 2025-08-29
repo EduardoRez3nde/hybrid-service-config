@@ -28,7 +28,7 @@ spring:
               predicates:
                 - Path=/api/users/**
               filters: 
-                - StripPrefix=2
+                - StripPrefix=0
 eureka:
   client:
     service-url:
