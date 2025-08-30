@@ -1,22 +1,28 @@
 server:
   port: 8081
+
 spring:
   application:
-      name: api-gateway
+    name: user-service
   datasource:
     url: jdbc:postgresql://user-db:5432/user_service_db
   jpa:
     hibernate:
       ddl-auto: update
   security:
-      oauth2:
-        client:
-          registration:
-            keycloak-client:
-              provider: keycloak
-              client-id: my-client
-              authorization-grant-type: password
-              scope: openid
-          provider:
-            keycloak:
-              issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
+    oauth2:
+      client:
+        registration:
+          keycloak-client:
+            provider: keycloak
+            client-id: my-client
+            authorization-grant-type: password
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
