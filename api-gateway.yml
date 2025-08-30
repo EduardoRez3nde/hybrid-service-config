@@ -27,6 +27,7 @@ spring:
               uri: lb://user-service
               predicates:
                 - Path=/api/users/**
+                - Path=/api/auth/**
               filters: 
                 - StripPrefix=0
 eureka:
