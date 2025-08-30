@@ -19,4 +19,4 @@ spring:
               scope: openid
           provider:
             keycloak:
-              issuer-uri: http://localhost:8080/auth/realms/hybrid-service-realm
+              issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
