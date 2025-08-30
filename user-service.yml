@@ -7,15 +7,15 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-security:
-    oauth2:
-      client:
-        registration:
-          keycloak-client:
-            provider: keycloak
-            client-id: my-client
-            authorization-grant-type: password
-            scope: openid
-        provider:
-          keycloak:
-            issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
+  security:
+      oauth2:
+        client:
+          registration:
+            keycloak-client:
+              provider: keycloak
+              client-id: my-client
+              authorization-grant-type: password
+              scope: openid
+          provider:
+            keycloak:
+              issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
