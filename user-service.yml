@@ -1,6 +1,5 @@
 server:
   port: 8081
-
 spring:
   application:
     name: user-service
@@ -21,8 +20,11 @@ spring:
         provider:
           keycloak:
             issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
-
 eureka:
   client:
     service-url:
       defaultZone: http://discovery-server:8761/eureka/
+keycloak:
+  admin:
+    server-url: http://keycloak:8080/auth
+    realm: hybrid-service-realm
