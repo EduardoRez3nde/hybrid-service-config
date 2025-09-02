@@ -5,6 +5,10 @@ spring:
     name: user-service
   datasource:
     url: jdbc:postgresql://user-db:5432/user_service_db
+  data:
+    redis:
+      host: redis
+      port: 6979
   jpa:
     hibernate:
       ddl-auto: update
