@@ -5,6 +5,11 @@ spring:
     name: user-service
   datasource:
     url: jdbc:postgresql://user-db:5432/user_service_db
+    username: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
   data:
     redis:
       host: redis
@@ -12,13 +17,8 @@ spring:
     cache:
       type: redis
       redis:
-        time-to-live: 10m
+        time-to-live: 4m30s
         cache-names: keycloak-admin-token
-    cache.cache-names: keycloak-admin-token
-    spring.cache.redis.time-to-live.keycloak-admin-token:
-  jpa:
-    hibernate:
-      ddl-auto: update
   security:
     oauth2:
       client:
@@ -26,7 +26,7 @@ spring:
           keycloak-client:
             provider: keycloak
             client-id: my-client
-            authorization-grant-type: password
+            authorization-grant-type: client_credentials
             scope: openid
         provider:
           keycloak:
@@ -37,5 +37,5 @@ eureka:
       defaultZone: http://discovery-server:8761/eureka/
 keycloak:
   admin:
-    server-url: http://keycloak:8080/auth
     realm: hybrid-service-realm
+  base-url: http://keycloak:8080/auth
