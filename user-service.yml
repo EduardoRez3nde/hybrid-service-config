@@ -26,6 +26,7 @@ spring:
           keycloak-client:
             provider: keycloak
             client-id: my-client
+            client-secret: ${KEYCLOAK_CLIENT_SECRET:default-secret}
             authorization-grant-type: client_credentials
             scope: openid
         provider:
