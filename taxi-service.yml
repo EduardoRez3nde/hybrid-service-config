@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: taxi-service
+  datasource:
+    url: jdbc:postgresql://taxi-db:5432/taxi_service_db
+    username: ${POSTGRES_USERNAME_TAXI_SERVICE}
+    password: ${POSTGRES_PASSWORD_TAXI_SERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
