@@ -1,0 +1,17 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: vehicle-service
+  datasource:
+    url: jdbc:postgresql://vehicle-db:5432/vehicle_service_db
+    username: ${POSTGRES_USERNAME_VEHICLE_SERVICE}
+    password: ${POSTGRES_PASSWORD_VEHICLE_SERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
