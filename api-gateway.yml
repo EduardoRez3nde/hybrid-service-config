@@ -28,14 +28,19 @@ spring:
               predicates:
                 - Path=/api/users/**
               filters:
-                - StripPrefix=0
-
+                - StripPrefix=1
             - id: user-service-auth-route
               uri: lb://user-service
               predicates:
                 - Path=/api/auth/**
               filters:
-                - StripPrefix=0
+                - StripPrefix=1
+            - id: vehicle-service-vehicles-route
+              uri: lb://vehicle-service
+              predicates:
+                - Path=/api/vehicles/**
+              filters:
+                - StripPrefix=1
 eureka:
   client:
     service-url:
