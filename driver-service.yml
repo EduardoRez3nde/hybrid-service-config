@@ -1,0 +1,17 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: driver-service
+  datasource:
+    url: jdbc:postgresql://driver-db:5432/driver_service_db
+    username: ${POSTGRES_USERNAME_DRIVER_SERVICE}
+    password: ${POSTGRES_PASSWORD_DRIVER_SERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
