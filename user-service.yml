@@ -1,5 +1,11 @@
 server:
   port: 8081
+app:
+  kafka:
+    admin:
+      auto-create: true
+    topics:
+      user-events: user-events-topic
 spring:
   application:
     name: user-service
@@ -20,10 +26,6 @@ spring:
         time-to-live: 4m30s
         cache-names: keycloak-admin-token
   kafka:
-    admin:
-      auto-create: true
-    topics:
-      user-events: user-events-topic
     bootstrap-servers: kafka:9092
     producer:
       acks: all
