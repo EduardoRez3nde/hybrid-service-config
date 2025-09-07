@@ -19,6 +19,20 @@ spring:
       redis:
         time-to-live: 4m30s
         cache-names: keycloak-admin-token
+  kafka:
+    admin:
+      auto-create: true
+    topics:
+      user-events: user-events-topic
+    bootstrap-servers: kafka:9092
+    producer:
+      acks: all
+      retries: 100
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
   security:
     oauth2:
       client:
