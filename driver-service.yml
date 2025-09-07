@@ -1,5 +1,11 @@
 server:
   port: 8084
+app:
+  kafka:
+    topics:
+      driver-events: driver.events.v1
+      driver-onboarding: driver.onboarding.v1
+      user-events: user.events.v1
 spring:
   application:
     name: driver-service
@@ -12,9 +18,6 @@ spring:
     hibernate:
       ddl-auto: update
   kafka:
-    topics:
-      driver-events: "driver-events-topic"
-      user-events: "user-events-topic" 
     bootstrap-servers: kafka:9092
     producer:
       acks: all
