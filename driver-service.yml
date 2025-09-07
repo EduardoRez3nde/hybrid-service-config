@@ -11,6 +11,30 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  kafka:
+    topics:
+      driver-events: "driver-events-topic"
+      user-events: "user-events-topic" 
+    bootstrap-servers: kafka:9092
+    producer:
+      acks: all
+      retries: 100
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: "driver-service-consumer-group"
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: 'com.rezende.user_service.events,com.rezende.driver_service.events'
+    listener:
+      ack-mode: manual
+      type: batch
 eureka:
   client:
     service-url:
