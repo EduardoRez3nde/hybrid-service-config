@@ -34,7 +34,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.type.mapping: com.rezende.user_service.events.UserRegisterEvent
+        spring.json.type.mapping: com.rezende.user_service.events.UserRegisterEvent:com.rezende.driver_service.dto.UserRegisterEventDTO
         spring.json.trusted.packages: com.rezende.driver_service.events.dto
     listener:
       ack-mode: manual
