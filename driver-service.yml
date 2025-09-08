@@ -3,10 +3,8 @@ server:
 app:
   kafka:
     topics:
-      driver-events: driver.events.v1
-      driver-onboarding: driver.onboarding.v1
-      driver-approved: driver.approved.v1
-      user-events: user.events.v1
+      driver-operational-status: driver.operational_status.v1
+      driver-lifecycle: driver.lifecycle.v1
 spring:
   application:
     name: driver-service
