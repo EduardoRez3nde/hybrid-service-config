@@ -23,18 +23,35 @@ spring:
                 - Path=/config-server/**
               filters:
                 - StripPrefix=1
+                
             - id: user-service-users-route
               uri: lb://user-service
               predicates:
                 - Path=/api/users/**
               filters:
                 - StripPrefix=1
+                
             - id: user-service-auth-route
               uri: lb://user-service
               predicates:
                 - Path=/api/auth/**
               filters:
                 - StripPrefix=1
+                
+            - id: drivers-service-drivers-route
+              uri: lb://drivers-service
+              predicates:
+                - Path=/api/drivers/**
+              filters:
+                - StripPrefix=1
+                
+            - id: admin-drivers-service-admin-drivers-route
+              uri: lb://admin-drivers-service
+              predicates:
+                - Path=/api/admim/drivers/**
+              filters:
+                - StripPrefix=1
+                
             - id: vehicle-service-vehicles-route
               uri: lb://vehicle-service
               predicates:
