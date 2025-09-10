@@ -41,14 +41,14 @@ spring:
                 - StripPrefix=1
                 
             - id: drivers-service-drivers-route
-              uri: lb://drivers-service
+              uri: lb://driver-service
               predicates:
                 - Path=/api/drivers/**
               filters:
                 - StripPrefix=1
                 
             - id: admin-drivers-service-admin-drivers-route
-              uri: lb://drivers-service
+              uri: lb://driver-service
               predicates:
                 - Path=/api/admin/drivers/**
               filters:
