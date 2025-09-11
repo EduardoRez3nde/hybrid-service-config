@@ -1,5 +1,17 @@
 server:
   port: 8081
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+  info:
+    title: "User Service API"
+    description: "Microsserviço responsável pela gestão e registo de utilizadores."
+    version: "v1.0.0"
+    contact:
+      name: "Eduardo Rezende"
+      email: "dudurezende426@gmail.com"
 app:
   kafka:
     admin:
