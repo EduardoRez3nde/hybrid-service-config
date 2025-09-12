@@ -6,6 +6,7 @@ app:
       driver-operational-status: driver.operational_status.v1
       driver-lifecycle: driver.lifecycle.v1
       user-events: user.events.v1
+      vehicle-events: vehicle.events.v1
 spring:
   application:
     name: driver-service
