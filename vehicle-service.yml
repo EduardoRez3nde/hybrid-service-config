@@ -1,5 +1,11 @@
 server:
   port: 8083
+app:
+  kafka:
+    admin:
+      auto-create: true
+    topics:
+      vehicle-events: vehicle.events.v1
 spring:
   application:
     name: vehicle-service
