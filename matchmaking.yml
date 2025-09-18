@@ -1,0 +1,44 @@
+server:
+  port: 8085
+app:
+  kafka:
+    topics:
+      driver-operational-status: matchmaking.operational_status.v1
+      driver-lifecycle: matchmaking.lifecycle.v1
+spring:
+  application:
+    name: matchmaking-service
+  datasource:
+    url: jdbc:postgresql://driver-db:5432/matchmaking_service_db
+    username: ${POSTGRES_USERNAME_MATCHMAKING_SERVICE}
+    password: ${POSTGRES_PASSWORD_MATCHMAKING_SERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      acks: all
+      retries: 100
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: "matchmaking-service-consumer-group"
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.type.mapping: com.rezende.matchmaking_service.events.UserRegisterEvent:com.rezende.driver_service.dto.UserRegisterEventDTO
+        spring.json.trusted.packages: com.rezende.matchmaking_service.events.dto
+    listener:
+      ack-mode: manual
+      type: single
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
