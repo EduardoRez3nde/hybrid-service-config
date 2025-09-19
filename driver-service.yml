@@ -3,7 +3,7 @@ server:
 app:
   kafka:
     topics:
-      driver-operational-status: driver.operational_status.v1
+      driver-status-updates: driver.status.updates.v1
       driver-lifecycle: driver.lifecycle.v1
       user-events: user.events.v1
       vehicle-events: vehicle.events.v1
