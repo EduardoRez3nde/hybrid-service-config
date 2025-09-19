@@ -6,6 +6,7 @@ app:
       auto-create: true
     topics:
       vehicle-events: vehicle.events.v1
+      approved-vehicle: approved.vehicle.v1
 spring:
   application:
     name: vehicle-service
