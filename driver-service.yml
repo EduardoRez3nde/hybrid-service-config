@@ -3,7 +3,9 @@ server:
 app:
   kafka:
     topics:
+      driver-rating-updates: driver.rating.updates.v1
       driver-status-updates: driver.status.updates.v1
+      driver-location-updates: driver.location.updates.v1
       driver-lifecycle: driver.lifecycle.v1
       user-events: user.events.v1
       vehicle-events: vehicle.events.v1
