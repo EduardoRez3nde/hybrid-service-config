@@ -3,7 +3,7 @@ server:
 app:
   kafka:
     topics:
-      driver-operational-status: matchmaking.operational_status.v1
+      driver-status-updates: driver.status.updates.v1
       driver-lifecycle: matchmaking.lifecycle.v1
 spring:
   application:
