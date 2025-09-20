@@ -3,6 +3,7 @@ server:
 app:
   kafka:
     topics:
+      driver-rated: driver.events.v1
       user-events: user.events.v1
       vehicle-events: vehicle.events.v1
 spring:
