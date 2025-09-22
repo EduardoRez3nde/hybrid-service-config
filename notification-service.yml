@@ -1,0 +1,46 @@
+server:
+  port: 8086
+app:
+  kafka:
+    topics:
+      driver-rating-updates: driver.rating.updates.v1
+      driver-status-updates: driver.status.updates.v1
+      driver-location-updates: driver.location.updates.v1
+      driver-average-rating: driver.average.rating.v1
+      driver-lifecycle: matchmaking.lifecycle.v1
+spring:
+  application:
+    name: notification-service
+  datasource:
+    url: jdbc:postgresql://notification-db:5432/notification_service_db
+    username: ${POSTGRES_USERNAME_NOTIFICATION_SERVICE}
+    password: ${POSTGRES_PASSWORD_NOTIFICATION_SERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      acks: all
+      retries: 100
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: "notification-service-consumer-group"
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.rezende.notification_service.events.dto
+    listener:
+      ack-mode: manual
+      type: single
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
