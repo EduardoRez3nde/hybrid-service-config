@@ -12,7 +12,7 @@ spring:
   application:
     name: matchmaking-service
   datasource:
-    url: jdbc:postgresql://driver-db:5432/matchmaking_service_db
+    url: jdbc:postgresql://matchmaking-db:5432/matchmaking_service_db
     username: ${POSTGRES_USERNAME_MATCHMAKING_SERVICE}
     password: ${POSTGRES_PASSWORD_MATCHMAKING_SERVICE}
     driver-class-name: org.postgresql.Driver
@@ -36,7 +36,6 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.type.mapping: com.rezende.matchmaking_service.events.UserRegisterEvent:com.rezende.driver_service.dto.UserRegisterEventDTO
         spring.json.trusted.packages: com.rezende.matchmaking_service.events.dto
     listener:
       ack-mode: manual
