@@ -1,5 +1,8 @@
 server:
   port: 8086
+firebase:
+  config:
+    service-account: /app/config/firebase/serviceAccountKey.json
 app:
   kafka:
     topics:
@@ -13,8 +16,8 @@ spring:
     name: notification-service
   datasource:
     url: jdbc:postgresql://notification-db:5432/notification_service_db
-    username: ${POSTGRES_USERNAME_NOTIFICATION_SERVICE}
-    password: ${POSTGRES_PASSWORD_NOTIFICATION_SERVICE}
+    username: ${POSTGRES_USERNAME_NOTIFICATION_SERVICE:-admin}
+    password: ${POSTGRES_PASSWORD_NOTIFICATION_SERVICE:-admin}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
