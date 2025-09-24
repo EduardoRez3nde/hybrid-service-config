@@ -6,7 +6,7 @@ firebase:
 app:
   kafka:
     topics:
-      driver-assigned-events: driver.assigned.events.v1
+      driver-assigned-ride-event: driver.assigned.ride.event.v1
       user-device-registrations: user.device.registrations.v1
 spring:
   application:
