@@ -6,11 +6,8 @@ firebase:
 app:
   kafka:
     topics:
-      driver-rating-updates: driver.rating.updates.v1
-      driver-status-updates: driver.status.updates.v1
-      driver-location-updates: driver.location.updates.v1
-      driver-average-rating: driver.average.rating.v1
-      driver-lifecycle: matchmaking.lifecycle.v1
+      driver-assigned-events: driver.assigned.events.v1
+      user-device-registrations: user.device.registrations.v1
 spring:
   application:
     name: notification-service
