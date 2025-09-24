@@ -11,6 +11,7 @@ app:
       user-events: user.events.v1
       vehicle-events: vehicle.events.v1
       approved-vehicle-event: approved.vehicle.event.v1
+      driver-average-rating: driver.average.rating.v1
 spring:
   application:
     name: driver-service
