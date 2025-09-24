@@ -3,9 +3,15 @@ server:
 app:
   kafka:
     topics:
-      driver-rated-events: driver.rated-events.v1
+      driver-average-rating: driver.average.rating.v1
+      driver-status-updates: driver.status.updates.v1
+      driver-lifecycle: driver.lifecycle.v1
+      driver-location-updates: driver.location.updates.v1
+    
+      driver-rated-events: driver.rated.events.v1
       user-events: user.events.v1
       vehicle-events: vehicle.events.v1
+      approved-vehicle-event: approved.vehicle.event.v1
 spring:
   application:
     name: driver-service
