@@ -6,7 +6,8 @@ app:
       auto-create: true
     topics:
       user-events: taxi.events.v1
-      ride-events: ride.events.v1
+      ride-rated: ride.rated.v1
+      driver-rated-event: driver.rated.event.v1
 spring:
   application:
     name: taxi-service
