@@ -18,6 +18,7 @@ app:
       auto-create: true
     topics:
       user-events: user.events.v1
+      user-device-registrations: user.device.registrations.v1
 spring:
   application:
     name: user-service
