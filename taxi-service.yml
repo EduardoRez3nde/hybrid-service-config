@@ -6,7 +6,7 @@ app:
       auto-create: true
     topics:
       user-events: user.events.v1
-      ride-rated: ride.rated.events.v1
+      ride-request-event: ride.request.event.v1
       driver-rated-event: driver.rated.event.v1
 spring:
   application:
