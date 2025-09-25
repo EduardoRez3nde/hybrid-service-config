@@ -3,11 +3,19 @@ server:
 firebase:
   config:
     service-account: /app/config/firebase/serviceAccountKey.json
+aws:
+  region: 'us-east-1'
+  access-key-id: ${AWS_ACCESS_KEY_ID}
+  secret-access-key: ${AWS_SECRET_ACCESS_KEY}
 app:
   kafka:
     topics:
       driver-assigned-ride-event: driver.assigned.ride.event.v1
       user-device-registrations: user.device.registrations.v1
+  aws:
+    sns:
+      topic-arn: ${SNS_TOPIC_ARN}
+      fcm-platform-application-arn: ${FCM_PLATFORM_ARN}
 spring:
   application:
     name: notification-service
@@ -18,7 +26,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   kafka:
     bootstrap-servers: kafka:9092
     producer:
