@@ -65,6 +65,29 @@ spring:
                 - Path=/api/vehicles/**
               filters:
                 - StripPrefix=1
+
+            - id: driver-service-drivers-route
+              uri: lb://driver-service
+              predicates:
+                - Path=/api/drivers/**
+              filters:
+                - StripPrefix=1
+            
+            - id: driver-service-admin-drivers-route
+              uri: lb://driver-service
+              predicates:
+                - Path=/api/admin/drivers/**
+              filters:
+                - StripPrefix=1
+
+            - id: taxi-service-ride-route
+              uri: lb://taxi-service
+              predicates:
+                - Path=/api/taxi/ride/**
+              filters:
+                - StripPrefix=1
+
+
 eureka:
   client:
     service-url:
