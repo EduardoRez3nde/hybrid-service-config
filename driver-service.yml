@@ -42,9 +42,6 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: com.rezende.driver_service.dto
-        spring.json.value.default.type: com.rezende.driver_service.events.UserRegisterEventDTO
     listener:
       ack-mode: manual
       type: single
