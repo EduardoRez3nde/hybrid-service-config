@@ -43,8 +43,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.add.type.headers: false
-        spring.json.trusted.packages: com.rezende.user_service.events
+        spring.json.trusted.packages: com.rezende.user_service.events.UserRegisterEvent
     listener:
       ack-mode: manual
       type: single
