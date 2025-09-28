@@ -14,7 +14,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak:8080/auth/realms/hybrid-service-realm
+          issuer-uri: http://${DOMAIN}:8080/auth/realms/hybrid-service-realm
   cloud:
     gateway:
       server:
