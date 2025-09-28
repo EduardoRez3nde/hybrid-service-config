@@ -50,6 +50,7 @@ spring:
       properties:
         enable.idempotence: true
         max.in.flight.requests.per.connection: 5
+        spring.json.type.mapping: user-created:com.rezende.user_service.events.UserRegisterEvent
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
   security:
