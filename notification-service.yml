@@ -44,7 +44,10 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: com.rezende.notification_service.events.dto
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.type.mapping: >-
+          user-device-registered:com.rezende.notification_service.dto.DeviceRegisteredEventDTO,
+          driver-assigned-to-ride:com.rezende.notification_service.event.DriverAssignedEvent
     listener:
       ack-mode: manual
       type: single
