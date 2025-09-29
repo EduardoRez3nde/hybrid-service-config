@@ -30,6 +30,7 @@ spring:
       properties:
         enable.idempotence: true
         max.in.flight.requests.per.connection: 5
+        spring.json.type.mapping: vehicle-approved:com.rezende.vehicle_service.events.VehicleApprovedEvent
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
 eureka:
