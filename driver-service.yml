@@ -52,7 +52,7 @@ spring:
       properties:
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
         spring.json.type.mapping: >-
-          user-created:com.rezende.driver_service.events.UserRegisterEvent,
+          user-created:com.rezende.driver_service.events.UserRegisterEventDTO,
           vehicle-approved:com.rezende.driver_service.dto.VehicleApprovedEventDTO,
           driver-rated:com.rezende.driver_service.dto.DriverRatedEventDTO
     listener:
