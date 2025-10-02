@@ -75,4 +75,4 @@ eureka:
 keycloak:
   admin:
     realm: hybrid-service-realm
-  base-url: http://keycloak:8080/auth
+  base-url: http://${DOMAIN}:8080/auth
