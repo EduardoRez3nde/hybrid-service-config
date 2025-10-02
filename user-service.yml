@@ -52,7 +52,7 @@ spring:
         max.in.flight.requests.per.connection: 5
         spring.json.type.mapping: >-
           user-created:com.rezende.user_service.events.UserRegisterEvent,
-          user-device-registered:com.rezende.user_service.events.UserDeviceRegisteredEvent
+          user-device-registered:com.rezende.user_service.events.DeviceRegisteredEvent
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
   security:
