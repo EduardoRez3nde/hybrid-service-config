@@ -69,7 +69,7 @@ spring:
             - id: vehicle-service-admin-vehicles-route
               uri: lb://vehicle-service
               predicates:
-                - Path=/api/admin/vehicles/**
+                - Path=/api/admin/vehicle/**
               filters:
                 - StripPrefix=2
 
