@@ -71,8 +71,7 @@ spring:
               predicates:
                 - Path=/api/admin/vehicle/**
               filters:
-                - StripPrefix=2
-
+                - StripPrefix=1
 
             - id: driver-service-drivers-route
               uri: lb://driver-service
