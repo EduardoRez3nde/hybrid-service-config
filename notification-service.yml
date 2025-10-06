@@ -27,6 +27,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migrations
   kafka:
     bootstrap-servers: kafka:9092
     producer:
