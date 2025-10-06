@@ -6,7 +6,7 @@ app:
       auto-create: true
     topics:
       user-events: user.events.v1
-      ride-request-event: ride.request.event.v1
+      ride-request-event: ride.request.events.v1
       driver-rated-event: driver.rated.event.v1
       ride-accept-event: ride.accept.event.v1
       ride-reject-event: ride.reject.event.v1
