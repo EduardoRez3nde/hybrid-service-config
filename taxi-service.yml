@@ -23,7 +23,7 @@ spring:
         enable.idempotence: true
         max.in.flight.requests.per.connection: 5
         spring.json.type.mapping: >-
-          ride-requested:com.rezende.taxi_service.event.RideRequestedEventDTO,
+          ride-requested:com.rezende.taxi_service.dto.RideRequestedEventDTO,
           driver-rated:com.rezende.taxi_service.event.DriverRatedEvent,
           ride-accepted-by-driver:com.rezende.taxi_service.event.RideAcceptedByDriverEvent,
           ride-rejected-by-driver:com.rezende.taxi_service.event.RideRejectedByDriverEvent
